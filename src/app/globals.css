@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --forest: #1F3B2D;
+  --forest-light: #2D5640;
+  --earth: #5C4033;
+  --beige: #E8DCCB;
+  --beige-light: #F5EFE6;
+  --soft-white: #FAFAF7;
+  --charcoal: #1A1A1A;
+  --gold: #C9A96E;
+  --gold-light: #E8C99A;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--soft-white);
+  color: var(--charcoal);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--beige-light);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--forest);
+  border-radius: 3px;
+}
+
+/* Selection color */
+::selection {
+  background: var(--forest);
+  color: var(--beige);
+}
+
+/* Utility classes */
+.font-serif { font-family: 'Cormorant Garamond', Georgia, serif; }
+.font-display { font-family: 'Playfair Display', serif; }
+.font-sans { font-family: 'DM Sans', system-ui, sans-serif; }
+
+.text-gold { color: var(--gold); }
+.text-forest { color: var(--forest); }
+.text-beige { color: var(--beige); }
+
+.bg-forest { background-color: var(--forest); }
+.bg-beige { background-color: var(--beige); }
+.bg-beige-light { background-color: var(--beige-light); }
+.bg-soft-white { background-color: var(--soft-white); }
+
+/* Glass card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.glass-card-dark {
+  background: rgba(31, 59, 45, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(201, 169, 110, 0.2);
+}
+
+/* Gold divider */
+.gold-divider {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 16px auto;
+}
+
+.gold-divider-left {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  margin: 16px 0;
+}
+
+/* Section styles */
+.section-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+/* Smooth image zoom on hover */
+.img-zoom {
+  overflow: hidden;
+}
+.img-zoom img {
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.img-zoom:hover img {
+  transform: scale(1.06);
+}
+
+/* Floating WhatsApp */
+.floating-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 999;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.floating-btn:hover {
+  transform: scale(1.1) translateY(-3px);
+  box-shadow: 0 12px 32px rgba(37, 211, 102, 0.4);
+}
+
+/* Mobile call sticky bar */
+.mobile-call-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 998;
+}
+
+/* Hero overlay gradient */
+.hero-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(15, 30, 20, 0.3) 0%,
+    rgba(15, 30, 20, 0.5) 50%,
+    rgba(15, 30, 20, 0.75) 100%
+  );
+}
+
+/* Parallax section */
+.parallax-bg {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Navbar blur */
+.navbar-scrolled {
+  background: rgba(31, 59, 45, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Room card */
+.room-card {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.room-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 60px rgba(31, 59, 45, 0.18);
+}
+
+/* Testimonial card */
+.testimonial-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(201, 169, 110, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(31, 59, 45, 0.08);
+}
+
+/* Input styles */
+.form-input {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(92, 64, 51, 0.2);
+  border-radius: 8px;
+  padding: 12px 16px;
+  width: 100%;
+  font-family: 'DM Sans', sans-serif;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  outline: none;
+}
+.form-input:focus {
+  border-color: var(--forest);
+  box-shadow: 0 0 0 3px rgba(31, 59, 45, 0.1);
+}
+
+/* Button styles */
+.btn-primary {
+  background: var(--forest);
+  color: var(--beige);
+  padding: 14px 32px;
+  border-radius: 4px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--forest);
+}
+.btn-primary:hover {
+  background: var(--forest-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(31, 59, 45, 0.3);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--beige);
+  padding: 14px 32px;
+  border-radius: 4px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(232, 220, 203, 0.6);
+}
+.btn-outline:hover {
+  background: rgba(232, 220, 203, 0.15);
+  border-color: var(--beige);
+  transform: translateY(-2px);
+}
+
+.btn-gold {
+  background: var(--gold);
+  color: var(--charcoal);
+  padding: 14px 32px;
+  border-radius: 4px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-gold:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(201, 169, 110, 0.4);
+}
+
+/* Leaf decoration */
+.leaf-decoration {
+  position: absolute;
+  opacity: 0.06;
+  pointer-events: none;
+}
+
+/* Page transition */
+.page-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.5s ease;
+}
+
+@media (max-width: 768px) {
+  .parallax-bg {
+    background-attachment: scroll;
+  }
+}
